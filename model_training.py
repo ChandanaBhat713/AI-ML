@@ -33,13 +33,13 @@ def train_model(X, y):
     print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 
     # Save the trained model and X_test data
-    joblib.dump(best_model, 'data/trained_model.pkl')
-    joblib.dump(X_test, 'data/X_test.pkl')
+    joblib.dump(best_model, 'trained_model.pkl')
+    joblib.dump(X_test, 'X_test.pkl')
 
     return best_model
 
 # Load preprocessed data
-X, y, label_encoders, scaler, categorical_cols, numerical_cols = joblib.load('data/preprocessed_data.pkl')
+X, y, label_encoders, scaler, categorical_cols, numerical_cols = joblib.load('preprocessed_data.pkl')
 
 # Train the model using CPU
 print("Training model using CPU...")
