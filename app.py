@@ -3,12 +3,12 @@ import pandas as pd
 import joblib
 import streamlit as st
 import ollama
-X, y, label_encoders, scaler, categorical_cols, numerical_cols = joblib.load('data/preprocessed_data.pkl')
+X, y, label_encoders, scaler, categorical_cols, numerical_cols = joblib.load('preprocessed_data.pkl')
 def predict_match_outcome(team1, team2, toss_winner, toss_decision, venue, day_night, team1_players, team2_players):
     global team1_proba, team2_proba
     # Load preprocessed data, trained model, and X_test
-    best_model = joblib.load('data/trained_model.pkl')
-    X_test = joblib.load('data/X_test.pkl')
+    best_model = joblib.load('trained_model.pkl')
+    X_test = joblib.load('X_test.pkl')
 
     # Validate user inputs
     def validate_input(input_value, encoder, input_name):
