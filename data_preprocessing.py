@@ -105,9 +105,9 @@ def load_and_preprocess_data(filepath):
     X = X.astype(float)
 
     # Save preprocessed data
-    joblib.dump((X, y, label_encoders, scaler, categorical_cols, numerical_cols), 'data/preprocessed_data.pkl')
+    joblib.dump((X, y, label_encoders, scaler, categorical_cols, numerical_cols), 'preprocessed_data.pkl')
 
     return X, y, label_encoders, scaler, categorical_cols, numerical_cols
 
 # Run the preprocessing function
-load_and_preprocess_data(r'C:\Users\Chandan Bhat\OneDrive\Desktop\IPL_miniproject\dataset\final_model\cleaned_combined_ipl_data.csv')
+load_and_preprocess_data(r'cleaned_combined_ipl_data.csv')
